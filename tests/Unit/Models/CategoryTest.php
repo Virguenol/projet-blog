@@ -10,6 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 //use PHPUnit\Framework\TestCase;
 
 /**
+ * @group unit
  * @group category
  */
 class CategoryTest extends TestCase

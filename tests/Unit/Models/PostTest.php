@@ -2,13 +2,18 @@
 
 namespace Tests\Unit\Models;
 
-use App\Models\Category;
+use App\Models\Tag;
 use Tests\TestCase;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 //use PHPUnit\Framework\TestCase;
 
-/** @group post */
+/**
+ * @group unit
+ * @group post
+*/
 class PostTest extends TestCase
 {
     use RefreshDatabase;
@@ -38,7 +43,7 @@ class PostTest extends TestCase
         $this->assertDatabaseCount('posts', 3);
     }
     /** @test */
-    public function a_position_belongs_to_only_one_category()
+    public function a_post_belongs_to_only_one_category()
     {
         Post::factory(3)->for(Category::factory())->create([
             'category_id' => 2,
@@ -49,6 +54,30 @@ class PostTest extends TestCase
 
         $this->assertDatabaseCount('posts', 3);
     }
-
+    /** @test */
+    public function a_post_belongs_to_only_one_user()
+    {
+        $posts = Post::factory()->for(User::factory())->create([
+            'category_id' => 2,
+            'user_id' => 1,
+            'title' => 'mon premier titre',
+            'slug' => 'mon-premier-titre',
+            'content' => 'moncontenu'
+        ]);
+        $this->assertModelExists($posts);
+    }
+    /** @test */
+    public function a_post_can_have_multiple_tags()
+    {
+        $posts = Post::factory()->for(User::factory())->create([
+            'category_id' => 2,
+            'user_id' => 1,
+            'tag_id' => 1,
+            'title' => 'mon premier titre',
+            'slug' => 'mon-premier-titre',
+            'content' => 'moncontenu'
+        ]);
+        $this->assertModelExists($posts);
+    }
 
 }

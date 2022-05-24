@@ -17,19 +17,32 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    /** @test */
-    public function parent(): BelongsTo
+    /**
+     * relationship between internal of the category
+     *
+     * @return BelongsTo
+     */
+    public function parent()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function childrens(): HasMany
+    /**
+     * a category can have child categories
+     *
+     * @return HasMany
+     */
+    public function childrens()
     {
         return $this->hasMany(Category::class, 'parent_id');
 
     }
-
-    public static function slug(): Attribute
+    /**
+     * allows to autocomplete the slug
+     *
+     * @return Attribute
+     */
+    public static function slug()
     {
        return Attribute::make(
             get: fn ($value) => $value,
@@ -37,6 +50,11 @@ class Category extends Model
         );
 
     }
+    /**
+     * a category can have multiple posts
+     *
+     * @return HasMany
+     */
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
