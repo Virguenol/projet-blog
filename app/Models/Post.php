@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 
 /**
+ * Model Post
+ *
  * @author archange <virguenolngot@email.com>
  */
 class Post extends Model

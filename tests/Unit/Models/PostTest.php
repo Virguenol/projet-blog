@@ -24,6 +24,8 @@ class PostTest extends TestCase
     {
         $post = Post::create([
             'category_id' => 2,
+            'user_id' => 1,
+            'tag_id' => 1,
             'title' => 'mon premier titre',
             'slug' => 'mon-premier-titre',
             'content' => 'moncontenu'
@@ -36,6 +38,8 @@ class PostTest extends TestCase
     {
         $post = Post::factory(3)->create([
             'category_id' => 2,
+            'user_id' => 1,
+            'tag_id' => 1,
             'title' => 'mon premier titre',
             'slug' => 'mon-premier-titre',
             'content' => 'moncontenu'
@@ -47,6 +51,8 @@ class PostTest extends TestCase
     {
         Post::factory(3)->for(Category::factory())->create([
             'category_id' => 2,
+            'user_id' => 1,
+            'tag_id' => 1,
             'title' => 'mon premier titre',
             'slug' => 'mon-premier-titre',
             'content' => 'moncontenu'
@@ -60,6 +66,7 @@ class PostTest extends TestCase
         $posts = Post::factory()->for(User::factory())->create([
             'category_id' => 2,
             'user_id' => 1,
+            'tag_id' => 1,
             'title' => 'mon premier titre',
             'slug' => 'mon-premier-titre',
             'content' => 'moncontenu'
