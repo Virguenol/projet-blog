@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
+
+/**
+ * @author archange <virguenolngot@email.com>
+ */
 class Category extends Model
 {
     use HasFactory;
@@ -18,9 +22,9 @@ class Category extends Model
     protected $table = 'categories';
 
     /**
-     * relationship between internal of the category
+     * Relationship between internal of the category
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function parent()
     {
@@ -28,9 +32,9 @@ class Category extends Model
     }
 
     /**
-     * a category can have child categories
+     * A category can have child categories
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function childrens()
     {
@@ -38,7 +42,7 @@ class Category extends Model
 
     }
     /**
-     * allows to autocomplete the slug
+     * Allows to autocomplete the slug
      *
      * @return Attribute
      */
@@ -51,9 +55,9 @@ class Category extends Model
 
     }
     /**
-     * a category can have multiple posts
+     * A category can have multiple posts
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function posts(): HasMany
     {

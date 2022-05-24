@@ -2,12 +2,17 @@
 
 namespace App\Models;
 
+use App\Models\User;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
+
+/**
+ * @author archange <virguenolngot@email.com>
+ */
 class Post extends Model
 {
     use HasFactory;
@@ -15,9 +20,9 @@ class Post extends Model
     protected $guarded = [];
 
     /**
-     * a post can only belong to one category
+     * A post can only belong to one category
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category(): BelongsTo
     {
@@ -25,21 +30,21 @@ class Post extends Model
     }
 
     /**
-     * a post cannot belong to a single user
+     * A post cannot belong to a single user
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
     /**
-     * a post can have multiple tags
+     * A post can have multiple tags
      *
-     * @return BelongsToMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function tag()
+    public function tag(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }

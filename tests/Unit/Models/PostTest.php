@@ -69,7 +69,7 @@ class PostTest extends TestCase
     /** @test */
     public function a_post_can_have_multiple_tags()
     {
-        $posts = Post::factory()->for(User::factory())->create([
+        $posts = Post::factory()->for(Tag::factory())->create([
             'category_id' => 2,
             'user_id' => 1,
             'tag_id' => 1,
