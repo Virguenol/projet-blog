@@ -4,10 +4,13 @@ namespace Tests\Unit\Models;
 
 use App\Models\Post;
 use App\Models\User;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+//use PHPUnit\Framework\TestCase;
 
 class UserTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic unit test example.
      *@test
@@ -15,6 +18,10 @@ class UserTest extends TestCase
      */
     public function a_user_can_have_multiple_posts()
     {
-       $posts = Post::factory()->for(User::factory()->create());
+       $user = User::factory()->for(Post::factory()->count(3)->create());
+       $this->assertDatabaseCount('posts', 3);
+
     }
+
+
 }
