@@ -26,7 +26,7 @@ class Post extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function category(): BelongsTo
+    public function category (): BelongsTo
     {
        return $this->belongsTo(Category::class);
     }
@@ -36,7 +36,7 @@ class Post extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function user(): BelongsTo
+    public function user (): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
@@ -46,7 +46,7 @@ class Post extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function tag(): BelongsToMany
+    public function tags (): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }

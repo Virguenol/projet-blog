@@ -8,6 +8,8 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Category;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+
 //use PHPUnit\Framework\TestCase;
 
 /**
@@ -16,7 +18,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 */
 class PostTest extends TestCase
 {
-    use RefreshDatabase;
+    use RefreshDatabase, WithFaker;
     /**
      * @test
      */
@@ -76,15 +78,14 @@ class PostTest extends TestCase
     /** @test */
     public function a_post_can_have_multiple_tags()
     {
-        $posts = Post::factory()->for(Tag::factory())->create([
-            'category_id' => 2,
-            'user_id' => 1,
-            'tag_id' => 1,
-            'title' => 'mon premier titre',
-            'slug' => 'mon-premier-titre',
-            'content' => 'moncontenu'
+        $post = Post::factory()->create();
+        $tag = Tag::factory()->create([
+            'name' => 'php',
+            'slug' => 'php'
         ]);
-        $this->assertModelExists($posts);
+
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $post->tags);
+
     }
 
 }
