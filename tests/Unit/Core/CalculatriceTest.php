@@ -28,4 +28,24 @@ class CalculatriceTest extends TestCase
       $this->assertEquals(5, $result);
 
     }
+
+    /** @test */
+    public function can_do_multiplication()
+    {
+      $calcul = new Calculator();
+      $result = $calcul->mult(2, 3);
+      $this->assertEquals(6, $result);
+
+    }
+
+    /** @test */
+    public function can_do_soustraction()
+    {
+      $calcul = new Calculator();
+      $result = $calcul->sous(2, 3);
+      $this->assertEquals(-1, $result);
+
+    }
+
+
 }
