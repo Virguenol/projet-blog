@@ -16,10 +16,9 @@ class TemperatureTest extends TestCase
         $temperature = new Temperature();
 
         $this->assertInstanceOf(Temperature::class, $temperature);
-
     }
 
-     /**
+    /**
      * @test
      */
     public function can_validate_formats()
@@ -29,8 +28,8 @@ class TemperatureTest extends TestCase
         $this->assertTrue($temperature->validate('°'));
         $this->assertTrue($temperature->validate('F'));
         $this->assertFalse($temperature->validate('k'));
-
     }
+
     /** @test */
     public function can_convert_degre_to_faranheit()
     {
@@ -38,8 +37,8 @@ class TemperatureTest extends TestCase
         $actual = $t->convert(20, 'F');
         $expected = 68;
         $this->assertEquals($expected, $actual);
-
     }
+
     /** @test */
     public function can_convert_faranheit_to_degre()
     {
