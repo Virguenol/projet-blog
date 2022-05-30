@@ -4,7 +4,7 @@ namespace Tests\Unit\Core;
 
 use PHPUnit\Framework\TestCase;
 
-/** @group array */
+/** @skip */
 class StarckTest extends TestCase
 {
     /**
@@ -25,7 +25,7 @@ class StarckTest extends TestCase
         $this->assertSame('foo', array_pop($tableau));
         $this->assertSame(0, count($tableau));
     }*/
-    /** @test */
+    /** @skip */
     public function empty_for_dependances()
     {
         $tab = [];
@@ -34,7 +34,7 @@ class StarckTest extends TestCase
 
         return $tab;
     }
-    /** @test
+    /** @skip
      *  @depends empty_for_dependances
     */
     public function push_in_array(array $tab)
@@ -48,7 +48,7 @@ class StarckTest extends TestCase
     }
 
     /**
-     * @test
+     * @skip
      *
      * @depends push_in_array
      */
@@ -59,7 +59,7 @@ class StarckTest extends TestCase
     }
 
     /**
-     * @test
+     * @skip
      */
     public function egaliter_desnombre()
     {
