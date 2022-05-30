@@ -5,7 +5,9 @@ namespace Tests\Unit\Core;
 use App\Core\Temperature;
 use PHPUnit\Framework\TestCase;
 
-/** @group core */
+/**
+ * @group core
+ */
 class TemperatureTest extends TestCase
 {
     /**
