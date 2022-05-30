@@ -19,8 +19,14 @@ class Calculator {
      *
      * @param float $number1
      * @param float $number2
+<<<<<<< HEAD
      */
     public function addition(float $number1, float $number2): float
+=======
+     * @return void
+     */
+    public function addition(float $number1, float $number2)
+>>>>>>> a05477f (ajout des commentaire)
     {
         return $number1 + $number2;
     }
@@ -32,7 +38,11 @@ class Calculator {
      * @param float $number2
      * @return void
      */
+<<<<<<< HEAD
     public function multiplication(float $number1, float $number2): float
+=======
+    public function multiplication(float $number1, float $number2)
+>>>>>>> a05477f (ajout des commentaire)
     {
         return $number1 * $number2;
     }
@@ -42,8 +52,14 @@ class Calculator {
      *
      * @param float $number1
      * @param float $number2
+<<<<<<< HEAD
      */
     public function substraction(float $number1, float $number2): float
+=======
+     * @return void
+     */
+    public function substraction(float $number1, float $number2)
+>>>>>>> a05477f (ajout des commentaire)
     {
         return $number1 - $number2;
     }
@@ -53,8 +69,14 @@ class Calculator {
      *
      * @param float $number1
      * @param float $number2
+<<<<<<< HEAD
      */
     public function division(float $number1, float $number2): float
+=======
+     * @return void
+     */
+    public function division(float $number1, float $number2)
+>>>>>>> a05477f (ajout des commentaire)
     {
         if($number2 == 0) {
            throw new Exception();

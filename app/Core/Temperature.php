@@ -6,6 +6,7 @@ use phpDocumentor\Reflection\Types\Boolean;
 
 use function PHPUnit\Framework\returnSelf;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /**
  * @FIXME :
@@ -37,6 +38,18 @@ class Temperature
      * The class constructor
      */
 >>>>>>> a05477f (ajout des commentaire)
+=======
+/**
+ * @author Archange <vieguenolngot@email.com>
+ *
+ * class
+ */
+class Temperature
+{
+    /**
+     * The class constructor
+     */
+>>>>>>> a05477f (ajout des commentaire)
     public function __construct()
     {
 
@@ -54,10 +67,13 @@ class Temperature
             return false;
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         // More elegant the you can add method getAutorizedFormat
         // to be use by the class and display the required format
         // return in_array($format, $this->authorizedFormat);
+=======
+>>>>>>> a05477f (ajout des commentaire)
 =======
 >>>>>>> a05477f (ajout des commentaire)
     }
