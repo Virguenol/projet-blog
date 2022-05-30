@@ -5,7 +5,7 @@ namespace App\Core;
 use phpDocumentor\Reflection\Types\Boolean;
 
 use function PHPUnit\Framework\returnSelf;
-<<<<<<< HEAD
+
 
 /**
  * @FIXME :
@@ -25,18 +25,7 @@ class Temperature
     protected $authorizedFormat = ['°', 'F'];
 
 
-=======
-/**
- * @author Archange <vieguenolngot@email.com>
- *
- * class
- */
-class Temperature
-{
-    /**
-     * The class constructor
-     */
->>>>>>> a05477f (ajout des commentaire)
+
     public function __construct()
     {
 
@@ -53,13 +42,7 @@ class Temperature
         } else {
             return false;
         }
-<<<<<<< HEAD
 
-        // More elegant the you can add method getAutorizedFormat
-        // to be use by the class and display the required format
-        // return in_array($format, $this->authorizedFormat);
-=======
->>>>>>> a05477f (ajout des commentaire)
     }
     /**
      * Temperature conversion function
