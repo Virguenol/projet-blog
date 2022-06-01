@@ -16,7 +16,6 @@ class TemperatureTest extends TestCase
     public function can_create_temperature()
     {
         $temperature = new Temperature();
-
         $this->assertInstanceOf(Temperature::class, $temperature);
     }
 

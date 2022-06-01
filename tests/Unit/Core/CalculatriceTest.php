@@ -3,8 +3,9 @@
 namespace Tests\Unit\Core;
 
 use App\Core\Calculator;
-use phpDocumentor\Reflection\PseudoTypes\True_;
+use DivisionByZeroError;
 use PHPUnit\Framework\TestCase;
+use phpDocumentor\Reflection\PseudoTypes\True_;
 
 
 /** @group core */
@@ -57,13 +58,14 @@ class CalculatriceTest extends TestCase
     }
 
     /** @test */
-    // public function can_do_division_zeno()
-    // {
-    //   $calcul = new Calculator();
-    //   $result = $calcul->division(8, 0);
-    //   $this->expectException(InvalidArgumentException::class);
-
-    // }
+    public function can_do_division_zeno()
+    {
+       $this->expectError();
+       $this->expectException(\DivisionByZeroError::class);
+       $this->expectErrorMessage("La division par zéro n'est pas autorisée!");
+       $calcul = new Calculator();
+       $result = $calcul->division(8, 0);
+    }
 
 
 }

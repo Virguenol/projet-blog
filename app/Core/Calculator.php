@@ -3,6 +3,8 @@
 namespace App\Core;
 
 use Exception;
+use DivisionByZeroError;
+
 /**
  * @author Archange <virguenolngot@gmail.com>
  *
@@ -19,7 +21,6 @@ class Calculator {
      *
      * @param float $number1
      * @param float $number2
-
      */
     public function addition(float $number1, float $number2)
     {
@@ -56,12 +57,19 @@ class Calculator {
      * @param float $number2
 
      */
-    public function division(float $number1, float $number2): float
+    public function division($number1, $number2)
     {
-        if($number2 == 0) {
-           throw new Exception();
-        } else {
-            return $number1 / $number2;
+
+        try {
+
+            $result = $number1 / $number2;
+
+            return $result;
+
+        } catch (\DivisionByZeroError $e) {
+
+            echo "La division par zéro n'est pas autorisée!\n";
+            $e->getMessage();
         }
 
     }
