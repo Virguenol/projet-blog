@@ -4,27 +4,40 @@ namespace App\Core;
 
 class FeuTricolor {
 
+    protected $color;
 
     public function __construct()
     {
 
     }
-    public function couler(string $color)
+
+    public function setColorB()
     {
-        if($color == "rouge")
+        $this->color;
+    }
+
+    /**
+     * nous return une couleur
+     *
+     * @param [type] $color
+     * @return string
+     */
+    public function couler($color): string
+    {
+        switch($color)
         {
-         $result = 'stop';
+            case 1:
+                return "vert";
+                break;
+            case 2:
+                return "orange";
+                break;
+            case 3:
+                return "rouge";
+                break;
+            default :
+            return "hors service";
         }
 
-        if($color == "vert")
-        {
-         $result = 'passer';
-        }
-
-        if($color == "orange")
-        {
-         $result = 'attension';
-        }
-        return $result;
     }
 }

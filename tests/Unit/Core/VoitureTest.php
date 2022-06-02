@@ -2,9 +2,13 @@
 
 namespace Tests\Unit\Core;
 
+
 use App\Core\Voiture;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Undocumented class
+ */
 class VoitureTest extends TestCase
 {
     /**
@@ -18,10 +22,28 @@ class VoitureTest extends TestCase
         $this->assertInstanceOf(Voiture::class, $car);
     }
 
-    public function car_stopped_at_red_light()
+    /** @test */
+    public function car_to_advance_at_red_light()
     {
-        $car = new Voiture();
-        $car->couler('rouge');
-        $this->assertEquals('stop', $car);
+       $car = new Voiture();
+       $actuel = $car->my_car(1);
+       $this->assertEquals('avance', $actuel);
     }
+
+    /** @test */
+    public function car_slow_down_at_red_light()
+    {
+       $car = new Voiture();
+       $actuel = $car->my_car(2);
+       $this->assertEquals('ralentir', $actuel);
+    }
+
+    /** @test */
+    public function car_stop_at_red_light()
+    {
+       $car = new Voiture();
+       $actuel = $car->my_car(3);
+       $this->assertEquals('arrêt', $actuel);
+    }
+
 }
