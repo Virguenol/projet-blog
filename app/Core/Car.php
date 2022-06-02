@@ -2,22 +2,22 @@
 
 namespace App\Core;
 
-
-
 /**
+ * class of car
  * @author Archange <virguenolngot@email.com>
- *
- *
  */
+class Car {
 
-class Voiture {
 
+    /**
+     * The car class builder
+     */
     public function __construct()
     {
 
     }
     /**
-     * nous retourne l'action de la voiture
+     * Returns us the action of the car
      *
      * @param [type] $color
      * @return string

@@ -3,29 +3,27 @@
 namespace Tests\Unit\Core;
 
 
-use App\Core\Voiture;
+use App\Core\Car;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Undocumented class
+ * @group core
  */
-class VoitureTest extends TestCase
+class CarTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @test
      */
     public function can_create_a_car()
     {
-        $car = new Voiture();
+        $car = new Car();
         $this->assertInstanceOf(Voiture::class, $car);
     }
 
     /** @test */
     public function car_to_advance_at_red_light()
     {
-       $car = new Voiture();
+       $car = new Car();
        $actuel = $car->my_car(1);
        $this->assertEquals('avance', $actuel);
     }
@@ -33,7 +31,7 @@ class VoitureTest extends TestCase
     /** @test */
     public function car_slow_down_at_red_light()
     {
-       $car = new Voiture();
+       $car = new Car();
        $actuel = $car->my_car(2);
        $this->assertEquals('ralentir', $actuel);
     }
@@ -41,7 +39,7 @@ class VoitureTest extends TestCase
     /** @test */
     public function car_stop_at_red_light()
     {
-       $car = new Voiture();
+       $car = new Car();
        $actuel = $car->my_car(3);
        $this->assertEquals('arrêt', $actuel);
     }

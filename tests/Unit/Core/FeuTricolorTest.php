@@ -2,13 +2,14 @@
 
 namespace Tests\Unit\Core;
 
+use App\Core\TraficLight;
 use PHPUnit\Framework\TestCase;
-use App\Core\FeuTricolor;
+
 
 /**
  * @group core
  */
-class FeuTricolorTest extends TestCase
+class TraficLightTest extends TestCase
 {
     /**
      * A basic unit test example.
@@ -17,8 +18,8 @@ class FeuTricolorTest extends TestCase
      */
     public function can_create_a_traffic_light()
     {
-        $feuOne = new FeuTricolor();
-        $this->assertInstanceOf(FeuTricolor::class, $feuOne);
+        $feuOne = new TraficLight();
+        $this->assertInstanceOf(TraficLight::class, $feuOne);
 
     }
 
@@ -27,8 +28,8 @@ class FeuTricolorTest extends TestCase
     */
     public function state_of_the_color_of_rouge()
     {
-      $feuOne = new FeuTricolor();
-      $result = $feuOne->couler(1);
+      $feuOne = new TraficLight();
+      $result = $feuOne->coler(1);
       $this->assertEquals('vert', $result);
 
     }
@@ -38,8 +39,8 @@ class FeuTricolorTest extends TestCase
     */
     public function state_of_the_color_of_vert()
     {
-      $feuOne = new FeuTricolor();
-      $result = $feuOne->couler(2);
+      $feuOne = new TraficLight();
+      $result = $feuOne->coler(2);
       $this->assertEquals('orange', $result);
     }
 
@@ -48,8 +49,8 @@ class FeuTricolorTest extends TestCase
     */
     public function state_of_the_color_of_orange()
     {
-      $feuOne = new FeuTricolor();
-      $result = $feuOne->couler(3);
+      $feuOne = new TraficLight();
+      $result = $feuOne->coler(3);
       $this->assertEquals('rouge', $result);
     }
 }

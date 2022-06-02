@@ -2,10 +2,17 @@
 
 namespace App\Core;
 
-class FeuTricolor {
 
-    protected $color;
+/**
+ * The traffic light class
+ *
+ * @author Archange <virguenolngot@email.com>
+ */
+class TraficLight {
 
+    /**
+     * The constructor of the TraficLight class
+     */
     public function __construct()
     {
 
@@ -17,14 +24,14 @@ class FeuTricolor {
     }
 
     /**
-     * nous return une couleur
+     * Function that returns the color of a traffic light
      *
      * @param [type] $color
      * @return string
      */
-    public function couler($color): string
+    public function coler($process): string
     {
-        switch($color)
+        switch($process)
         {
             case 1:
                 return "vert";
