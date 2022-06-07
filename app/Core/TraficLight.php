@@ -3,48 +3,38 @@
 namespace App\Core;
 
 
-/**
- * The traffic light class
- *
- * @author Archange <virguenolngot@email.com>
- */
+
 class TraficLight {
+    private $color;
 
-    /**
-     * The constructor of the TraficLight class
-     */
-    public function __construct()
+    public function __construct($color)
     {
-
+        $this->color = $color;
     }
 
-    public function setColorB()
+    public function getColor()
     {
-        $this->color;
+        return $this->color;
     }
 
-    /**
-     * Function that returns the color of a traffic light
-     *
-     * @param [type] $color
-     * @return string
-     */
-    public function coler($process): string
+    public function setColor($color)
     {
-        switch($process)
-        {
-            case 1:
-                return "vert";
-                break;
-            case 2:
-                return "orange";
-                break;
-            case 3:
-                return "rouge";
-                break;
-            default :
-            return "hors service";
-        }
-
+        return $this->color = $color;
     }
+
+    public function redLight():string
+    {
+        return "Stop le feu est rouge";
+    }
+
+    public function orangeLight():string
+    {
+        return "Attention alentir le feu passe bientôt au rouge";
+    }
+
+    public function greenLight()
+    {
+        return "le le feu est vert rouler";
+    }
+
 }

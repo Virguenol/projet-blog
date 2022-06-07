@@ -7,50 +7,70 @@ use PHPUnit\Framework\TestCase;
 
 
 /**
- * @group core
+ * @group trafic
  */
 class TraficLightTest extends TestCase
 {
     /**
-     * A basic unit test example.
-     *
      * @test
      */
-    public function can_create_a_traffic_light()
+    public function we_can_create_a_traffic_light()
     {
-        $feuOne = new TraficLight();
-        $this->assertInstanceOf(TraficLight::class, $feuOne);
+        $fire = new TraficLight('red');
+        $this->assertInstanceOf(TraficLight::class, $fire);
+    }
 
+    /**
+     * Car brand Accessors and Mutators
+     *
+     * @test
+     * */
+    public function get_color_fire()
+    {
+        $car = new TraficLight('red');
+        $car->getColor('red');
+        $this->assertEquals('red', $car->getColor());
+    }
+
+    /** @test */
+    public function set_color()
+    {
+        $car = new TraficLight('vert');
+        $color = 'vert';
+        $car->setColor($color);
+        $this->assertEquals($color, $car->getColor());
     }
 
     /**
      * @test
-    */
-    public function state_of_the_color_of_rouge()
+     */
+    public function call_the_red_light()
     {
-      $feuOne = new TraficLight();
-      $result = $feuOne->coler(1);
-      $this->assertEquals('vert', $result);
-
+        $fire = new TraficLight('red');
+        $actuel = $fire->redLight();
+        $this->assertEquals('Stop le feu est rouge', $actuel);
     }
 
-     /**
+    /**
      * @test
-    */
-    public function state_of_the_color_of_vert()
+     */
+    public function call_the_orange_light()
     {
-      $feuOne = new TraficLight();
-      $result = $feuOne->coler(2);
-      $this->assertEquals('orange', $result);
+        $fire = new TraficLight('orange');
+        $actuel = $fire->orangeLight();
+        $this->assertEquals('Attention alentir le feu passe bientôt au rouge', $actuel);
     }
 
-     /**
+    /**
      * @test
-    */
-    public function state_of_the_color_of_orange()
+     */
+    public function call_the_green_light()
     {
-      $feuOne = new TraficLight();
-      $result = $feuOne->coler(3);
-      $this->assertEquals('rouge', $result);
+        $fire = new TraficLight('green');
+        $actuel = $fire->greenLight();
+        $this->assertEquals('le le feu est vert rouler', $actuel);
     }
+
+
+
 }

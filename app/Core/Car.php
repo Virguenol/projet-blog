@@ -2,6 +2,10 @@
 
 namespace App\Core;
 
+/**
+ * @author Archange <virguenolngot@email.com>
+ * Car class and these methods
+ */
 class Car {
     private $mark;
     private $color;
@@ -14,7 +18,9 @@ class Car {
         $this->speed = $speed;
 
     }
-
+    /**
+     * Car mark accessors and mutators
+     */
     public function getMark()
     {
         return $this->mark;
@@ -62,7 +68,7 @@ class Car {
     }
 
     /**
-     * acceleration function
+     * Acceleration function
      *
      * @return string
      */
@@ -71,6 +77,12 @@ class Car {
         return "la voiture roule";
     }
 
+    /**
+     * Accelerate function
+     *
+     * @param [type] $speed
+     * @return string
+     */
     public function accelerate($speed):string
     {
         $speed *= 5;
@@ -78,6 +90,12 @@ class Car {
         return "la voiture va plus vite et la vitesse est maintenant a $speed";
     }
 
+    /**
+     * Brake function
+     *
+     * @param [type] $speed
+     * @return string
+     */
     public function brake($speed):string
     {
         $speed *= 0;
