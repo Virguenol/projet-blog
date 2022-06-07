@@ -2,43 +2,86 @@
 
 namespace App\Core;
 
-/**
- * class of car
- * @author Archange <virguenolngot@email.com>
- */
 class Car {
+    private $mark;
+    private $color;
+    private $speed;
 
-
-    /**
-     * The car class builder
-     */
-    public function __construct()
+    public function __construct($mark, $color, $speed)
     {
+        $this->mark  = $mark;
+        $this->color = $color;
+        $this->speed = $speed;
 
     }
+
+    public function getMark()
+    {
+        return $this->mark;
+    }
+
+    public function setMark($mark)
+    {
+        return $this->mark = $mark;
+    }
+
     /**
-     * Returns us the action of the car
+     * Car color accessors and mutators
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    public function setColor($color)
+    {
+        return $this->color = $color;
+    }
+
+    /**
+     * Car color accessors and mutators
+     */
+    public function getSpeed()
+    {
+        return $this->speed;
+    }
+
+    public function setSpeed($speed)
+    {
+        return $this->speed = $speed;
+    }
+
+    /**
+     * The methods of my car class
      *
-     * @param [type] $color
+     * The method the car starts
+     */
+    public function started():string
+    {
+        return "la voiture a demarer";
+    }
+
+    /**
+     * acceleration function
+     *
      * @return string
      */
-    public function my_car($color):string
+    public function rolled(): string
     {
-        switch($color)
-        {
-            case 1 :
-                return "avance";
-                break;
-            case 2 :
-                return "ralentir";
-                break;
-            case 3 :
-                return "arrêt";
-                break;
-            default :
-                return "continu d'avancer";
-        }
-
+        return "la voiture roule";
     }
 
+    public function accelerate($speed):string
+    {
+        $speed *= 5;
+
+        return "la voiture va plus vite et la vitesse est maintenant a $speed";
+    }
+
+    public function brake($speed):string
+    {
+        $speed *= 0;
+
+        return "la voiture a freiner";
+    }
 }
